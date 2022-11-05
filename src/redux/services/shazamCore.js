@@ -8,6 +8,11 @@ export const shazamCoreApi = createApi({
             headers.set('X-RapidAPI-Key, 223933c0b0msh07b99fa2cf5b429p180527jsn361ea462c22b')
 
             return headers;
-        }
+        },
+    }),
+    endpoints: (builder) => ({
+        getTopCharts: builder.query({query: '/charts/world'}),
     })
 })
+
+export const {useGetTopChartsQuery, } = shazamCoreApi;
