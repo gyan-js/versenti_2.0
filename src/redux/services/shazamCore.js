@@ -10,6 +10,7 @@ export const shazamCoreApi = createApi({
       return headers;
     },
   }),
+
   endpoints: (builder) => ({
     getTopCharts: builder.query({ query: () => '/charts/world' }),
     getSongsByGenre: builder.query({ query: (genre) => `/charts/genre-world?genre_code=${genre}` }),
