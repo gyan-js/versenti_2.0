@@ -1,3 +1,4 @@
+import { XCircleFillIcon } from '@primer/octicons-react';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -22,35 +23,23 @@ const MusicPlayer = () => {
     if (currentSongs.length) dispatch(playPause(true));
   }, [currentIndex]);
 
+ // TODO: Implement PlayPause => function...
+
   const handlePlayPause = () => {
-    if (!isActive) return;
+    if(!activeSong) {
+     return true;
+    }
 
-    if (isPlaying) {
+    if(isPlaying) {
       dispatch(playPause(false));
-    } else {
-      dispatch(playPause(true));
     }
-  };
-
-  const handleNextSong = () => {
-    dispatch(playPause(false));
-
-    if (!shuffle) {
-      dispatch(nextSong((currentIndex + 1) % currentSongs.length));
-    } else {
-      dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)));
+    else {
+      dispatch(playPause(true))
     }
-  };
+  }
 
-  const handlePrevSong = () => {
-    if (currentIndex === 0) {
-      dispatch(prevSong(currentSongs.length - 1));
-    } else if (shuffle) {
-      dispatch(prevSong(Math.floor(Math.random() * currentSongs.length)));
-    } else {
-      dispatch(prevSong(currentIndex - 1));
-    }
-  };
+
+
 
   return (
     <div className="relative sm:px-12 px-8 w-full flex items-center justify-between">
@@ -65,8 +54,8 @@ const MusicPlayer = () => {
           setShuffle={setShuffle}
           currentSongs={currentSongs}
           handlePlayPause={handlePlayPause}
-          handlePrevSong={handlePrevSong}
-          handleNextSong={handleNextSong}
+          //handlePrevSong={handlePrevSong}
+          //handleNextSong={handleNextSong}
         />
         <Seekbar
           value={appTime}
@@ -83,7 +72,7 @@ const MusicPlayer = () => {
           seekTime={seekTime}
           repeat={repeat}
           currentIndex={currentIndex}
-          onEnded={handleNextSong}
+          //onEnded={handleNextSong}
           onTimeUpdate={(event) => setAppTime(event.target.currentTime)}
           onLoadedData={(event) => setDuration(event.target.duration)}
         />
