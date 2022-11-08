@@ -39,8 +39,8 @@ const Discover = () => {
             key={song.key}
             song={song}
             isPlaying={isPlaying}
-            
-            
+            activeSong={activeSong}
+            data={data}
             i={i}
           />
         ))}
