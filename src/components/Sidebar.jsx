@@ -3,6 +3,7 @@ import { HiOutlineSearch, HiTicket, HiX } from 'react-icons/hi';
 import { GlobeIcon, SignOutIcon, SignInIcon } from '@primer/octicons-react';
 import { MdSettings } from 'react-icons/md';
 import {AiOutlineCompass} from 'react-icons/ai'
+import {DiYeoman} from 'react-icons/di'
 
 //import { useGlobalContext } from './context';
 
@@ -48,7 +49,7 @@ const Sidebar = () => {
                 <span className='mx-4'>Around You</span>
             </a>
             <a className='flex items-center px-4 py-2 mt-5 rounded-md text-gray-600 hover:text-gray-700 hover:bg-gray-200 transition-colors transform'>
-                
+				<DiYeoman />
                 <span className='mx-4'>Top artist</span>
             </a>
             
