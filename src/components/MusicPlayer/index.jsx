@@ -38,6 +38,13 @@ const MusicPlayer = () => {
     }
   }
 
+  const handleNextSong = () => {
+    dispatch(playPause(false));
+
+    if(!shuffle) {
+      dispatch(nextSong((currentIndex + 1) % currentSongs.length));
+    }
+  }
 
 
 
@@ -83,3 +90,5 @@ const MusicPlayer = () => {
 };
 
 export default MusicPlayer;
+
+//how to make a search in javscript ?
