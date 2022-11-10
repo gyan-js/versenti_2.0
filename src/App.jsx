@@ -1,16 +1,29 @@
+import { current } from '@reduxjs/toolkit';
+import { createContext, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-
+import Switch from 'rc-switch'
+import ReactSwitch from 'react-switch'
 import { Searchbar, Sidebar, MusicPlayer, TopPlay } from './components';
 import { ArtistDetails, TopArtists, AroundYou, Discover, Search, SongDetails, TopCharts } from './pages';
 
+export const ThemeContext = createContext(null)
+
+
+
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
+  const [theme, setTheme] = useState("dark-bg")
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "dark-bg" ? "light-bg" : "dark-bg"))
+  }
 
   return (
+    <ThemeContext.Provider value={{theme, setTheme}}>
     <div className="relative flex">
-       <Sidebar />
-      <div className="flex-1 flex flex-col bg-gradient-to-br dark-bg  ">
+       <Sidebar  />
+      <div className="flex-1 flex flex-col bg-gradient-to-br" id={theme}>
         
         <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
           <div className="flex-1 h-fit pb-40">
@@ -26,7 +39,9 @@ const App = () => {
         
             </Routes>
           </div>
+          
           <div className="xl:sticky relative top-0 h-fit">
+            
             <TopPlay />
           </div>
         </div>
@@ -38,6 +53,7 @@ const App = () => {
         </div>
       )}
     </div>
+    </ThemeContext.Provider>
   );
 };
 
