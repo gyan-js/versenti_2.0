@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Route } from 'react-router-dom';
@@ -19,7 +19,7 @@ const Discover = () => {
     return <Loader title="Fetching songs..." />
   }
 
-  //if (error) return <Error />;
+ 
 
   const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
 
@@ -31,7 +31,7 @@ const Discover = () => {
         <select
           onChange={(e) => dispatch(selectGenreListId(e.target.value))}
           value={genreListId || 'pop'}
-          className="bg-transparent text-gray-300 p-3 text-sm rounded-lg outline-none sm:mt-0 mt-5"
+          className="bg-transparent bg-black text-gray-300 p-3 text-sm rounded-lg outline-none sm:mt-0 mt-5"
         
         >
           {genres.map((genre) => <option key={genre.value} value={genre.value}>{genre.title}</option>)}
