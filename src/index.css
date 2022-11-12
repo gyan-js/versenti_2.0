@@ -17,12 +17,12 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.dark-bg{
-  background: linear-gradient(to right, #191624, #121286);
+.dark{
+  background:  #0d0d2c;
 }
 
-.light-bg{
-  background: linear-gradient(to right, #131212, lightblue);
+.light{
+  background: #262661;
 }
 
 .bar:nth-child(2) {
@@ -55,3 +55,55 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.switch{
+  display: flex;
+  width: 100vw;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+#dark-bg #sidebar {
+  background: linear-gradient( #121286);
+}
+
+#light-bg #sidebar{
+  background: linear-gradient( lightblue);
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+  
+}
+
+.label {
+  width: 50px;
+  height: 26px;
+  background-color:#111;
+  display: flex;
+  border-radius:50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+
