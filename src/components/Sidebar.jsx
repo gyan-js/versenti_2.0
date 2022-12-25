@@ -63,14 +63,14 @@ function Sidebar(props) {
   }
   return (
     <>
-      <div  className=" flex  md:flex  flex-col bg-gradient-to-br bg-transparent  bg-[#343434] dark:bg-[#000] w-64 px-4 py-8 border-r min-h-screen relative hidden">
+      <div  className=" flex  md:flex font-black  flex-col bg-gradient-to-br bg-[#5464f7] dark:bg-[#3347ff] w-64 px-4 py-8 border-r min-h-screen relative hidden">
         <Searchbar />
         <NavLinks />
         <ThemeSwitch class="absolute mt-96 left-11" onChange={themeSwitch} />
       </div>
 
       {/* Mobile sidebar */}
-      <div className="sidebar absolute md:hidden block top-6 right-3">
+      <div className=" sidebar absolute md:hidden block top-6 right-3">
         {!mobileMenuOpen ? (
           <HiOutlineMenu className="w-6 h-6 mr-2 text-white" onClick={() => setMobileMenuOpen(true)} />
         ) : (
@@ -78,7 +78,7 @@ function Sidebar(props) {
         )}
       </div>
 
-      <div className={`absolute top-0 h-screen w-2/3 bg-gradient-to-br bg-[#191624] backdrop-blur z-10 p-6 md:hidden smooth-transition ${mobileMenuOpen ? 'left-0' : '-left-full'}`}>
+      <div className={`   absolute top-0 h-screen w-2/3 bg-gradient-to-br bg-[#333953] backdrop-blur z-10 p-6 md:hidden smooth-transition ${mobileMenuOpen ? 'left-0' : '-left-full'}`}>
       
         <NavLinks handleClick={() => setMobileMenuOpen(false)} />
         <ThemeSwitch onChange={themeSwitch} />
