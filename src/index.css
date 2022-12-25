@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 /* Active Navigation Link */
+.app-gradient-pattern{
+ 
+}
+.sidebar-gradient-pattern {
+
+}
 .active {
   @apply text-cyan-500;
 }
@@ -22,7 +28,7 @@
 }
 
 .light{
-  background: #262661;
+  background: #fff;
 }
 
 .bar:nth-child(2) {
