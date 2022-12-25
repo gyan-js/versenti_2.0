@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import Spline from '@splinetool/react-spline';
 import { Route } from 'react-router-dom';
 import { Error, Loader, SongCard } from '../components';
 import { selectGenreListId } from '../redux/features/playerSlice';
@@ -51,6 +51,7 @@ const Discover = () => {
           />
         ))}
       </div>
+      
     
     </div>
   );
