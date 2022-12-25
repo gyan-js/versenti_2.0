@@ -6,6 +6,7 @@ import Switch from 'rc-switch'
 import ReactSwitch from 'react-switch'
 import { Searchbar, Sidebar, MusicPlayer, TopPlay, ThemeSwitch } from './components';
 import { ArtistDetails, TopArtists, AroundYou, Discover, Search, SongDetails, TopCharts } from './pages';
+import Spline from '@splinetool/react-spline';
 
 export const ThemeContext = createContext(null)
 
@@ -13,14 +14,16 @@ export const ThemeContext = createContext(null)
 
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
+
+
  
   
   return (
    
     <div className="relative flex">
-       <Sidebar />
+      <Sidebar />
        
-      <div className="flex-1 bg-[#343434] flex flex-col bg-gradient-to-br dark:bg-[#000] " >
+      <div className="flex-1  bg-[#5464f7] flex flex-col bg-gradient-to-br dark:bg-[#3347ff] " >
         
       
         <div className="px-6 h-[calc(100vh-60px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
@@ -41,6 +44,11 @@ const App = () => {
           <div className="xl:sticky relative top-0 h-fit">
             
             <TopPlay />
+          
+
+   
+
+ 
           </div>
           
         </div>
