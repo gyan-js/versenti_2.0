@@ -10,6 +10,8 @@
   "dependencies": {
     "@primer/octicons-react": "^17.9.0",
     "@reduxjs/toolkit": "^1.8.5",
+    "@splinetool/react-spline": "^2.2.5",
+    "@splinetool/runtime": "^0.9.168",
     "axios": "^0.27.2",
     "rc-switch": "^4.0.0",
     "react": "^18.2.0",
